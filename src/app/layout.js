@@ -1,5 +1,11 @@
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/context/AuthContext";
+import ReduxProvider from "@/store/provider";
+import SideBar from "@/components/base/SideBar";
+import MainLayout from "@/components/base/MainLayout";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,12 +23,22 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ReduxProvider>
+          <AuthProvider>
+            <MainLayout>
+            {children}
+            </MainLayout>
+          </AuthProvider>
+        </ReduxProvider>
+      </body>
     </html>
   );
 }

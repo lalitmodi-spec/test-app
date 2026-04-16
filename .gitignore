@@ -36,6 +36,8 @@ yarn-error.log*
 # vercel
 .vercel
 
+test-trust-8382d-firebase-adminsdk-fbsvc-d64b0ceff2.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
