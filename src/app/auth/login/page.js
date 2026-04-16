@@ -198,25 +198,6 @@ export default function Login() {
                         >
                             {loading ? <Spin /> : "Sign In"}
                         </button>
-
-                        <div className="relative">
-                            <div className="absolute inset-0 flex items-center">
-                                <div className="w-full border-t border-gray-200"></div>
-                            </div>
-                            <div className="relative flex justify-center text-sm">
-                                <span className="px-2 bg-white text-gray-500">Or continue with</span>
-                            </div>
-                        </div>
-
-                        <button
-                            type="button"
-                            onClick={handleGoogle}
-                            disabled={loading}
-                            className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all shadow-sm"
-                        >
-                            <GoogleOutlined className="text-xl" />
-                            Google
-                        </button>
                     </form>
 
                     {error && (
